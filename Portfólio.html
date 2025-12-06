@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Apollo Henrique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a56db 0%, #1e40af 100%);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #3b82f6;
+            border-radius: 2px;
+        }
+        
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        .project-card, .certificate-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover, .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .certificate-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certificate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #3b82f6;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Cabeçalho -->
+    <header class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-3">Apollo Henrique Araujo de Carvalho</h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-6">Estagiário de T.I | Desenvolvedor</p>
+                <p class="max-w-2xl text-lg text-blue-100 mb-8">
+                    Busco uma oportunidade de estágio em Tecnologia da Informação para aplicar meus conhecimentos em desenvolvimento, 
+                    infraestrutura e análise de dados, com foco em aprendizagem prática e contribuição em ambientes colaborativos.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#contato" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-blue-50 transition duration-300">
+                        Entre em Contato
+                    </a>
+                    <a href="#projetos" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white/10 transition duration-300">
+                        Ver Projetos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Informações Pessoais -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 section-title">Sobre Mim</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-user text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Informações Pessoais</h3>
+                                <p class="text-gray-600">20 anos | Brasileiro | Solteiro | Cidade/SP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-graduation-cap text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Formação Acadêmica</h3>
+                                <p class="text-gray-600">Fatec - Análise e Desenvolvimento de Sistemas (Início 2025.1)</p>
+                                <p class="text-gray-600">Etec Taboão da Serra - Técnico em Desenvolvimento de Sistema (Finalizado)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-briefcase text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Experiência Profissional</h3>
+                                <p class="text-gray-600">Telecomunicações - Sercom (6 meses)</p>
+                                <p class="text-gray-600">Garçom - Restaurante e Lanchonete Sampaio (1 ano e 3 meses)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-8 rounded-2xl shadow-lg max-w-md">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">Contato Rápido</h3>
+                        <div class="space-y-4">
+                            <a href="tel:+5511981042283" class="flex items-center p-3 bg-white rounded-lg hover:bg-blue-50 transition duration-300">
+                                <i class="fas fa-phone text-blue-500 mr-3"></i>
+                                <span>+55 (11) 98104-2283</span>
+                            </a>
+                            <a href="mailto:jk586622@gmail.com" class="flex items-center p-3 bg-white rounded-lg hover:bg-blue-50 transition duration-300">
+                                <i class="fas fa-envelope text-blue-500 mr-3"></i>
+                                <span>jk586622@gmail.com</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/apollo-araujo-a5566325b/" target="_blank" class="flex items-center p-3 bg-white rounded-lg hover:bg-blue-50 transition duration-300">
+                                <i class="fab fa-linkedin text-blue-500 mr-3"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Habilidades -->
+    <section id="habilidades" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 text-center section-title inline-block">Habilidades</h2>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Hard Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-700 flex items-center">
+                        <i class="fas fa-code mr-3"></i> Hard Skills
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-cogs text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Lógica de Programação</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Conhecimento sólido em fundamentos de programação</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-github text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Versionamento (Git/GitHub)</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Controle de versão e colaboração em projetos</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-laptop-code text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Linguagens de Programação</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">C#, PHP, JavaScript, Python</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-database text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Banco de Dados</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">MySQL, Banco de Dados em Nuvem (Azure)</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-language text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Idiomas</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Português (Nativo), Inglês (Básico)</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-cloud text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Azure</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Operações CRUD com C# em ambiente simulado</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-700 flex items-center">
+                        <i class="fas fa-users mr-3"></i> Soft Skills
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-handshake text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Trabalho em Equipe</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Colaboração eficaz em ambientes de grupo</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-brain text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Raciocínio Lógico</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Capacidade analítica para resolver problemas</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-comments text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Boa Comunicação</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Habilidade para transmitir ideias com clareza</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Gestão de Tempo</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Organização e priorização de tarefas</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-lightbulb text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Facilidade de Aprendizado</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Capacidade de assimilar novos conhecimentos</p>
+                        </div>
+                        
+                        <div class="skill-card bg-white p-5 rounded-xl shadow-md border border-blue-100">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-tasks text-blue-500 mr-2"></i>
+                                <h4 class="font-semibold">Organização</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Método e ordem na execução de atividades</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 text-center section-title inline-block">Projetos Acadêmicos</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 3 -->
+                <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-utensils text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Plataforma para Restaurante</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Protótipo de plataforma com módulos de pedidos e gerenciamento de cardápio, desenvolvido com Laravel/PHP.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">PHP</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Prototipagem</span>
+                        </div>
+                        <a href="https://github.com/Apollojk106/Bistro" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800">
+                            <i class="fab fa-github mr-2"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 -->
+                <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-tasks text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Sistema de Gestão de Demandas</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Sistema completo com painel administrativo e notificações simuladas, desenvolvido com Laravel/PHP.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Laravel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">PHP</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Full-Stack</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                        <a href="https://github.com/Apollojk106/OSCPS" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800">
+                            <i class="fab fa-github mr-2"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Projeto 1 -->
+                <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-cloud text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Banco de Dados em Nuvem (Azure)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Desenvolvimento de operações CRUD com C# em ambiente simulado na plataforma Azure.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Azure</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">C#</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Cloud</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">CRUD</span>
+                        </div>
+                        <a href="https://github.com/Apollojk106/Gerenciador.Kelly.Bolos.Project" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800">
+                            <i class="fab fa-github mr-2"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://github.com/Apollojk106" target="_blank" class="inline-flex items-center bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300">
+                    <i class="fab fa-github mr-3 text-xl"></i> Acesse todos os projetos no GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Certificados -->
+    <section id="certificados" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 text-center section-title inline-block">Certificados e Cursos</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certificado 1 -->
+                <div class="certificate-card bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Python - Curso em Vídeo</h3>
+                                <p class="text-gray-500 text-sm">Concluído</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Curso completo de Python cobrindo fundamentos da linguagem, estruturas de dados e lógica de programação.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Concluído</span>
+                            <span class="text-blue-600 text-sm font-medium">40 horas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificado 2 -->
+                <div class="certificate-card bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Hardware - Curso em Vídeo</h3>
+                                <p class="text-gray-500 text-sm">Concluído</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Conhecimentos sobre componentes de hardware, montagem e manutenção de computadores.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Concluído</span>
+                            <span class="text-blue-600 text-sm font-medium">30 horas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificado 3 -->
+                <div class="certificate-card bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Lógica de Programação</h3>
+                                <p class="text-gray-500 text-sm">Concluído</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Fundamentos de lógica de programação, algoritmos e resolução de problemas computacionais.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Concluído</span>
+                            <span class="text-blue-600 text-sm font-medium">40 horas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificado 4 -->
+                <div class="certificate-card bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Técnico em Desenvolvimento de Sistemas</h3>
+                                <p class="text-gray-500 text-sm">Etec Taboão da Serra</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Formação técnica completa em desenvolvimento de sistemas, incluindo programação, banco de dados e análise de sistemas.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Diplomado</span>
+                            <span class="text-blue-600 text-sm font-medium">18 meses</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificado 5 -->
+                <div class="certificate-card bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Introdução à IoT - Cisco Networking Academy</h3>
+                                <p class="text-gray-500 text-sm">Concluído</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Fundamentos da Internet das Coisas, incluindo arquitetura, protocolos de comunicação, dispositivos conectados e aplicações práticas em ambientes inteligentes.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Concluído</span>
+                            <span class="text-blue-600 text-sm font-medium">6 horas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificado 6 -->
+                <div class="certificate-card bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-code text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Fundamentos do Hardware do Computador - Cisco Networking Academy</h3>
+                                <p class="text-gray-500 text-sm">Concluído</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Conhecimentos sobre componentes de hardware, montagem, manutenção e solução de problemas em computadores pessoais.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Concluído</span>
+                            <span class="text-blue-600 text-sm font-medium">6 horas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <div class="inline-flex flex-col items-center">
+                    <a href="#contato" class="inline-flex items-center bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300">
+                        <i class="fas fa-envelope mr-3"></i> Entre em contato
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="py-12 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 text-center">Entre em Contato</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Informações de Contato -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-address-card mr-3"></i> Informações
+                    </h3>
+                    <div class="space-y-5">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Localização</h4>
+                                <p>Cidade/SP, Brasil</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Telefone</h4>
+                                <p>+55 (11) 98104-2283</p>                               
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">E-mail</h4>
+                                <p>jk586622@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Links Rápidos -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-link mr-3"></i> Links Rápidos
+                    </h3>
+                    <div class="space-y-4">
+                        <a href="https://www.linkedin.com/in/apollo-araujo-a5566325b/" target="_blank" class="flex items-center p-3 bg-white/20 rounded-lg hover:bg-white/30 transition duration-300">
+                            <i class="fab fa-linkedin mr-3 text-xl"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Apollojk106" target="_blank" class="flex items-center p-3 bg-white/20 rounded-lg hover:bg-white/30 transition duration-300">
+                            <i class="fab fa-github mr-3 text-xl"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#certificados" class="flex items-center p-3 bg-white/20 rounded-lg hover:bg-white/30 transition duration-300">
+                            <i class="fas fa-certificate mr-3 text-xl"></i>
+                            <span>Certificados</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Download do Currículo -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl flex flex-col justify-center items-center text-center">
+                    <div class="mb-6">
+                        <i class="fas fa-file-download text-5xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Baixe meu Currículo</h3>
+                        <p class="text-blue-100">Faça o download da versão completa em PDF</p>
+                    </div>
+                    <!-- Aqui você pode adicionar o link para download do currículo -->
+                    <a href="curriculo_Apollo.docx" download class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-blue-50 transition duration-300 inline-flex items-center">
+                        <i class="fas fa-download mr-2"></i> Baixar Currículo
+                    </a>
+                    <p class="text-sm text-blue-100 mt-4">Formato: PDF | Tamanho: ~150KB</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-xl mb-6">Vamos conversar sobre oportunidades de estágio em T.I!</p>
+                <a href="mailto:jk586622@gmail.com" class="inline-flex items-center bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition duration-300 text-lg">
+                    <i class="fas fa-envelope mr-3"></i> Enviar E-mail
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Apollo Henrique</h3>
+                    <p class="text-blue-200">Estagiário de T.I | Desenvolvedor</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://github.com/Apollojk106" target="_blank" class="contact-icon text-2xl hover:text-blue-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/apollo-araujo-a5566325b/" target="_blank" class="contact-icon text-2xl hover:text-blue-300">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:jk586622@gmail.com" class="contact-icon text-2xl hover:text-blue-300">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-blue-200">© 2023 Apollo Henrique. Todos os direitos reservados.</p>
+                    <p class="text-sm text-blue-300 mt-1">Desenvolvido com HTML, Tailwind CSS e JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="topButton" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Botão Voltar ao Topo
+        const topButton = document.getElementById('topButton');
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topButton.classList.remove('hidden');
+            } else {
+                topButton.classList.add('hidden');
+            }
+        };
+        
+        topButton.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
