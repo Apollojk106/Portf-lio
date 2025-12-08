@@ -1,10 +1,128 @@
+/* ===== GRADIENTES E CORES ===== */
 .gradient-bg {
     background: linear-gradient(135deg, #1a56db 0%, #1e40af 100%);
 }
 
+/* ===== ESTILOS DO HEADER FIXO ===== */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+    will-change: transform;
+}aw
+
+/* Quando o header está encolhido */
+#main-header.scrolled {
+    backdrop-filter: blur(10px);
+    background: rgba(30, 64, 175, 0.97);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito para quando estiver rolando rápido */
+#main-header.fast-scroll {
+    transform: translateY(0) !important;
+    background: rgba(30, 64, 175, 0.98) !important;
+    backdrop-filter: blur(15px) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Efeito de transição suave para o hero */
+#main-header.scrolled .hero-section {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header top (parte compacta) */
+#header-top {
+    transition: all 0.3s ease;
+}
+
+#main-header.scrolled #header-top {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Menu mobile */
+#mobile-menu {
+    background: rgba(30, 64, 175, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Links do header desktop */
+.header-link {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.header-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fbbf24;
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+.header-link:hover {
+    color: #fbbf24;
+}
+
+.header-link:hover::after {
+    width: 100%;
+}
+
+/* Links do menu mobile */
+.mobile-link {
+    position: relative;
+    padding-left: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-link::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.mobile-link:hover {
+    color: #fbbf24;
+    padding-left: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-link:hover::before {
+    transform: translateX(5px);
+}
+
+/* ===== ESTILOS GERAIS ===== */
 .section-title {
     position: relative;
     padding-bottom: 10px;
+    display: inline-block;
 }
 
 .section-title::after {
@@ -16,40 +134,54 @@
     height: 4px;
     background-color: #3b82f6;
     border-radius: 2px;
+    transition: width 0.3s ease;
 }
 
+.section-title:hover::after {
+    width: 100%;
+}
+
+/* ===== CARDS DE HABILIDADES ===== */
 .skill-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                border-color 0.4s ease;
+    border: 2px solid transparent;
+    opacity: 0;
+}
+
+.skill-card.active {
+    opacity: 1;
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
 }
 
+/* ===== CARDS DE PROJETOS E CERTIFICADOS ===== */
 .project-card,
 .certificate-card {
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.project-card.active,
+.certificate-card.active {
+    opacity: 1;
 }
 
 .project-card:hover,
 .certificate-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.contact-icon {
-    transition: transform 0.3s ease;
-}
-
-.contact-icon:hover {
-    transform: scale(1.1);
-}
-
-.certificate-card {
-    position: relative;
-    overflow: hidden;
-}
-
+/* Efeito especial para certificados */
 .certificate-card::before {
     content: '';
     position: absolute;
@@ -59,14 +191,70 @@
     height: 40px;
     background-color: #3b82f6;
     clip-path: polygon(100% 0, 0 0, 100% 100%);
+    opacity: 0.8;
 }
 
+/* ===== ÍCONES DE CONTATO ===== */
+.contact-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #93c5fd;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== ANIMAÇÕES MAIS SUAVES E PRECOCES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card,
+.project-card,
+.certificate-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Delay reduzido para as animações começarem mais cedo */
+.skill-card:nth-child(1) { animation-delay: 0s; }
+.skill-card:nth-child(2) { animation-delay: 0.05s; }
+.skill-card:nth-child(3) { animation-delay: 0.1s; }
+.skill-card:nth-child(4) { animation-delay: 0.15s; }
+.skill-card:nth-child(5) { animation-delay: 0.2s; }
+.skill-card:nth-child(6) { animation-delay: 0.25s; }
+
+.project-card:nth-child(1) { animation-delay: 0s; }
+.project-card:nth-child(2) { animation-delay: 0.1s; }
+.project-card:nth-child(3) { animation-delay: 0.2s; }
+
+.certificate-card:nth-child(1) { animation-delay: 0s; }
+.certificate-card:nth-child(2) { animation-delay: 0.1s; }
+.certificate-card:nth-child(3) { animation-delay: 0.2s; }
+.certificate-card:nth-child(4) { animation-delay: 0.3s; }
+.certificate-card:nth-child(5) { animation-delay: 0.4s; }
+.certificate-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* ===== NOTIFICAÇÃO TOAST ===== */
 .toast-notification {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #2563eb;
-    /* azul tailwind */
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
     padding: 12px 20px;
     border-radius: 10px;
@@ -76,9 +264,154 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.toast-notification::before {
+    content: '✓';
+    background: white;
+    color: #2563eb;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .toast-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+#topButton {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+#topButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+#topButton:active {
+    transform: translateY(0);
+}
+
+/* ===== SCROLL SUAVE ===== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* ===== RESPONSIVIDADE ADICIONAL ===== */
+@media (max-width: 768px) {
+    /* Ajustes para mobile */
+    #main-header {
+        background: rgba(30, 64, 175, 0.95);
+        backdrop-filter: blur(10px);
+    }
+    
+    .header-link::after {
+        display: none;
+    }
+    
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .toast-notification {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+    
+    /* Ajuste para o botão do menu mobile */
+    #mobile-menu-button {
+        transition: transform 0.3s ease;
+    }
+    
+    #mobile-menu-button.active {
+        transform: rotate(90deg);
+    }
+}
+
+/* ===== ESTADOS ATIVOS ===== */
+.header-link.active,
+.mobile-link.active {
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+.header-link.active::after {
+    width: 100%;
+}
+
+/* ===== EFEITOS DE FOCO ===== */
+*:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* ===== ESTILOS PARA FORMULÁRIOS (se necessário no futuro) ===== */
+input, textarea, select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== LOADING SPINNER (opcional) ===== */
+.spinner {
+    border: 3px solid rgba(59, 130, 246, 0.3);
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== OTIMIZAÇÕES PARA BAIXA PREFERÊNCIA DE MOVIMENTO ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .skill-card,
+    .project-card,
+    .certificate-card {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+/* ===== EFEITOS REVEAL PARA ANIMAÇÃO NO SCROLL ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
     opacity: 1;
     transform: translateY(0);
 }

@@ -12,34 +12,73 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-    <!-- Cabeçalho -->
-    <header class="gradient-bg text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col items-center text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-3">Apollo Henrique Araujo de Carvalho</h1>
-                <p class="text-xl md:text-2xl text-blue-100 mb-6">Estagiário de T.I | Desenvolvedor</p>
-                <p class="max-w-2xl text-lg text-blue-100 mb-8">
-                    Busco uma oportunidade de estágio em Tecnologia da Informação para aplicar meus conhecimentos em
-                    desenvolvimento,
-                    infraestrutura e análise de dados, com foco em aprendizagem prática e contribuição em ambientes
-                    colaborativos.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#contato"
-                        class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-blue-50 transition duration-300">
-                        Entre em Contato
-                    </a>
-                    <a href="#projetos"
-                        class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white/10 transition duration-300">
-                        Ver Projetos
-                    </a>
+    <!-- Cabeçalho Fixo -->
+    <header id="main-header" class="fixed top-0 left-0 w-full gradient-bg text-white z-50 transition-all duration-300">
+        <!-- Header Superior (visível quando encolhido) -->
+        <div id="header-top" class="container mx-auto px-6 py-3 transition-all duration-300">
+            <div class="flex items-center justify-between">
+                <!-- Logo/Nome reduzido -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold">Apollo Henrique</h2>
+                        <p class="text-sm text-blue-100">Desenvolvedor</p>
+                    </div>
                 </div>
+                
+                <!-- Menu de Navegação para desktop -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="header-link hover:text-blue-200 transition-colors">Início</a>
+                    <a href="#sobre" class="header-link hover:text-blue-200 transition-colors">Sobre</a>
+                    <a href="#habilidades" class="header-link hover:text-blue-200 transition-colors">Habilidades</a>
+                    <a href="#projetos" class="header-link hover:text-blue-200 transition-colors">Projetos</a>
+                    <a href="#certificados" class="header-link hover:text-blue-200 transition-colors">Certificados</a>
+                    <a href="#contato" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
+                        Contato
+                    </a>
+                </nav>
+                
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-button" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
+        
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobile-menu" class="md:hidden bg-blue-800/95 backdrop-blur-sm py-4 px-6 hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#inicio" class="mobile-link py-2 hover:text-blue-200">Início</a>
+                <a href="#sobre" class="mobile-link py-2 hover:text-blue-200">Sobre</a>
+                <a href="#habilidades" class="mobile-link py-2 hover:text-blue-200">Habilidades</a>
+                <a href="#projetos" class="mobile-link py-2 hover:text-blue-200">Projetos</a>
+                <a href="#certificados" class="mobile-link py-2 hover:text-blue-200">Certificados</a>
+                <a href="#contato" class="mobile-link py-2 hover:text-blue-200">Contato</a>
+            </div>
+        </div>
+        
+        <!-- Seção Hero Completa (aparece no topo da página) -->
+        <section id="inicio" class="hero-section py-12 transition-all duration-500">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col items-center text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-3">Apollo Henrique Araujo de Carvalho</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 mb-6">Estagiário de T.I | Desenvolvedor</p>
+                    <p class="max-w-2xl text-lg text-blue-100 mb-8">
+                        Busco uma oportunidade de estágio em Tecnologia da Informação para aplicar meus conhecimentos em
+                        desenvolvimento,
+                        infraestrutura e análise de dados, com foco em aprendizagem prática e contribuição em ambientes
+                        colaborativos.
+                    </p>
+                </div>
+            </div>
+        </section>
     </header>
 
-    <!-- Seção de Informações Pessoais -->
-    <section class="py-12 bg-white">
+    <!-- Espaço para compensar o header fixo -->
+    <div id="header-spacer" class="pt-24 md:pt-80"></div>
+    <section id="sobre" class="py-12 bg-white">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div>
@@ -557,10 +596,6 @@
 
             <div class="text-center mt-12">
                 <p class="text-xl mb-6">Vamos conversar sobre oportunidades de estágio em T.I!</p>
-                <a href="mailto:jk586622@gmail.com"
-                    class="inline-flex items-center bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition duration-300 text-lg">
-                    <i class="fas fa-envelope mr-3"></i> Enviar E-mail
-                </a>
             </div>
         </div>
     </section>
