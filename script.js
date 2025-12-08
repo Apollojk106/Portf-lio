@@ -1,18 +1,3 @@
-// Botão Voltar ao Topo
-const topButton = document.getElementById('topButton');
-
-window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        topButton.classList.remove('hidden');
-    } else {
-        topButton.classList.add('hidden');
-    }
-};
-
-topButton.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
 // Suavizar rolagem para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
